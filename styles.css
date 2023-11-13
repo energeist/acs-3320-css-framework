@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding: 0;
+  line-height: 1.25em;
+}
+
+:root {
+  --base-font-size: 1em;
+  --heading-scale-factor: 1.2;
+}
+
+body {
+  font-family: Oxygen, Roboto, system-ui, -apple-system, BlinkMacSystemFont;
+}
+
+p {
+  font-size: var(--base-font-size);
+}
+
+/* h5 will be the same size as a p element, 
+h4 -> h1 will scale up by a factor of the --heading-scale-factor variable, 
+h6 will scale down by the same */
+
+h1 {
+  font-size: calc(var(--base-font-size) * calc(pow(var(--heading-scale-factor), 4)));
+}
+
+h2 {
+  font-size: calc(var(--base-font-size) * calc(pow(var(--heading-scale-factor), 3)));
+}
+
+h3 {
+  font-size: calc(var(--base-font-size) * calc(pow(var(--heading-scale-factor), 2)));
+}
+
+h4 {
+  font-size: calc(var(--base-font-size) * var(--heading-scale-factor));
+}
+
+h5 {
+  font-size: 1em;
+}
+
+h6 {
+  font-size: calc(var(--base-font-size) * calc(pow(var(--heading-scale-factor), -1)));
+}
+
+button {
+  
+}
+
+.h-nav-bar {
+  display: flex;
+  flex-direction: row;
+}
+
+.v-nav-bar {
+  display: flex;
+  flex-direction: column;
+}
