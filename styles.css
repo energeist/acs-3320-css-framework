@@ -5,16 +5,36 @@
   margin-inline-start: 0;
   margin-inline-end: 0;
   padding: 0;
-  line-height: 1.25em;
+  line-height: 1em;
 }
 
 :root {
+  /* font size variables */
   --base-font-size: 1em;
   --heading-scale-factor: 1.2;
+
+  /* color variables */
+  --color-background: rgba(68, 47, 25, 1);
+  --color-foreground: rgba(194, 172, 147, 1);
+  --color-dark: rgba(106, 83, 59, 1);
+  --color-light:  rgba(233, 214, 192, 1);
+  --color-md-light: rgba(233, 214, 192, 0.5);
+  --color-md-dark: rgba(106, 83, 59, 0.5);
+  --color-primary: rgba(147, 121, 93, 1);
+  --color-info: rgba(220, 171, 44, 1);
+  --color-md-info: rgba(220, 171, 44, 0.5);
+  --color-success: rgba(22, 74, 37, 1);
+  --color-md-success: rgba(22, 74, 37, 0.5);
+  --color-danger: rgba(193, 6, 6, 1);
+  --color-md-danger: rgba(193, 6, 6, 0.5);
+  --color-callout: rgba(0, 51, 153, 1);
+  --color-md-callout: rgba(0, 51, 153, 0.5);
+  --color-lightest: rgba(255, 255, 255, 1);
 }
 
 body {
   font-family: Oxygen, Roboto, system-ui, -apple-system, BlinkMacSystemFont;
+  background-color: var(--color-background)
 }
 
 p {
@@ -50,15 +70,96 @@ h6 {
 }
 
 button {
-  
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 0.25em;
+  min-width: 5em;
+  min-height: 2em;
 }
 
-.h-nav-bar {
+.navbar {
   display: flex;
   flex-direction: row;
+  border-bottom: 3px solid black;
+  padding: 0.5em;
+  justify-content: space-around;
 }
 
-.v-nav-bar {
+.navbar > ul {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: end;
+}
+
+.navbar > ul > li {
+  list-style-type: none;
+  padding-bottom: 0.25em;
+  border-bottom: 3px solid var(--color-dark);
+  text-decoration-thickness: 3px;
+  margin: 0px 5px;
+}
+
+.navbar > ul > li > h1 {
+  padding: 0px;
+  margin: 0px;
+  display: inline;
+  line-height: 1em;
+}
+
+.navbar > ul > li > a {
+  position: relative;
+  text-decoration: none;
+  color: var(--color-dark);
+}
+
+
+.navbar > ul > li > a::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  top: -1.25em;
+  left: 0;
+  height: 20px;
+  width: 100%;
+  background-image: none;
+  background-size: cover;
+  opacity: 0.5;
+}
+
+.navbar > ul > li > a:hover::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  top: -1.25em;
+  left: 0;
+  height: 20px;
+  width: 100%;
+  transform: background-image url("/steam1.png");
+  background-size: cover;
+  opacity: 0.5;
+}
+
+@keyframes steam {
+  0% {
+    background-image: url("/steam1.png");
+  }
+  50% {
+    background-image: url("/steam2.png");
+  }
+  100% {
+    background-image: url("/steam3.png");
+  }
+}
+
+.navbar > ul > li > a:hover::before {
+  animation: steam 1s ease-in-out infinite;
+}
+
+pre {
+  width: 80%;
+  margin: auto;
+  align-content: center;
+  border: 3px solid black;
+  font-family: monospace;
+  background-color: var(--color-md-light);
 }
