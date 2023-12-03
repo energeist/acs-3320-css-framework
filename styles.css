@@ -209,3 +209,27 @@ form > label > span {
 form > label > textarea {
   min-height: 5em;
 }
+
+/* colour grid styles */
+
+.color-grid {
+  padding: 1em;
+  background-color: white;
+  display: grid;
+  border: 2px solid black;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 1em;
+  margin: 1em auto;
+  width: 70%;
+  height: 70%;
+}
+
+.color-grid > div {
+  border: 2px solid black;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
