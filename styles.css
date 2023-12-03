@@ -34,7 +34,8 @@
 
 body {
   font-family: Oxygen, Roboto, system-ui, -apple-system, BlinkMacSystemFont;
-  background-color: var(--color-background)
+  background-color: var(--color-background);
+  padding: 1em;
 }
 
 p {
@@ -44,6 +45,13 @@ p {
 /* h5 will be the same size as a p element, 
 h4 -> h1 will scale up by a factor of the --heading-scale-factor variable, 
 h6 will scale down by the same */
+
+h1, h2, h3, h4, h5, h6, p {
+  /* font-family: Oxygen, Roboto, system-ui, -apple-system, BlinkMacSystemFont;
+  font-weight: 700;
+  color: var(--color-dark); */
+  margin: 0.5em 0;
+}
 
 h1 {
   font-size: calc(var(--base-font-size) * calc(pow(var(--heading-scale-factor), 4)));
@@ -73,6 +81,7 @@ button {
   border: 1px solid black;
   border-radius: 3px;
   padding: 0.25em;
+  margin: 0.5em;
   min-width: 5em;
   min-height: 2em;
 }
@@ -81,7 +90,7 @@ button {
   display: flex;
   flex-direction: row;
   border-bottom: 3px solid black;
-  padding: 0.5em;
+  /* padding: 0em; */
   justify-content: space-around;
 }
 
@@ -113,7 +122,9 @@ button {
 }
 
 
-.navbar > ul > li > a::before {
+/* replace this with a svg steam animation that doesn't suck */
+
+/* .navbar > ul > li > a::before {
   content: "";
   position: absolute;
   display: inline-block;
@@ -153,13 +164,48 @@ button {
 
 .navbar > ul > li > a:hover::before {
   animation: steam 1s ease-in-out infinite;
-}
+} */
 
 pre {
-  width: 80%;
+  width: 90%;
+  min-height: calc(4em + 6px);
+  padding: 0 1em;
   margin: auto;
   align-content: center;
+  justify-content: center;
   border: 3px solid black;
   font-family: monospace;
   background-color: var(--color-md-light);
+}
+
+code {
+  margin: auto 0 auto 0;
+  width: 100%;
+  align-items: center;
+}
+
+/* Additional styles in clipboardStyles.css & scripts.js to add clipboard copy to code blocks */
+
+form {
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 1em;
+  margin: auto;
+  background-color: var(--color-foreground);
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+}
+
+form > label > span {
+  margin: 0.5em 0;
+}
+
+form > label > textarea {
+  min-height: 5em;
 }
