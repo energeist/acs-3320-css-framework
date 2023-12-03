@@ -1,13 +1,14 @@
 <!-- This is a demonstration page for the CeSSpresso CSS framework -->
 <html>
 	<head>
-		<link rel="stylesheet" href="styles.css">	
+		<link rel="stylesheet" href="styles.css">
+		<script type=”text/javascript” src=”prefixfree.min.js”></script>
 		<title>CeSSpresso CSS Framework</title>
 	</head>
 	<!-- Page Wraper -->
 	<body class="dark">
 		<!-- Page Navigation -->
-		<div class="navbar">
+		<div class="navbar around">
 			<div>
 				<h1 class="title">CeSSpresso</h1>
 				<h4 class="subtitle">An espresso-flavoured CSS framework</h4>
@@ -25,7 +26,7 @@
 			</ul>
 
 			<ul>
-				<li><a href="link/to/your/framework/repo">GitHub</a></li>
+				<li><a href="https://github.com/energeist/acs-3320-css-framework">GitHub</a></li>
 			</ul>
 		</div>
 		<!-- main content -->
@@ -132,37 +133,6 @@ href=&quot;#&quot;&gt;links&lt;/a&gt; to show off their styles in context.&lt;/p
 						<span>Your comments:</span>
 						<textarea placeholder="Your comment"></textarea>
 					</label>
-
-					<label>
-						<span>Choose a file:</span>
-					</label>
-					<input type="file">
-
-					<label>
-						<span>Choose a date:</span>
-					</label>
-					<input type="date">
-
-					<label>
-						<span>Choose a time:</span>
-					</label>
-					<input type="time">
-
-					<label>
-						<span>Choose a color:</span>
-					</label>
-					<input type="color">
-
-					<label>
-						<span>Choose a number:</span>
-					</label>
-					<input type="number">
-
-					<label>
-						<span>Choose a range:</span>
-					</label>
-					<input type="range">
-
 					<!-- Switch with Click -->
 					<div>
 						<label id="switch-2" class="switch-2">
@@ -234,13 +204,13 @@ href=&quot;#&quot;&gt;links&lt;/a&gt; to show off their styles in context.&lt;/p
 			<!-- --------------------------- -->
 			<!-- Nav Bar styles -->
 			<section id="navbar">
-				<h1>Navbar</h1>
+				<h1>Navbars</h1>
 				
-				<h2>Navbar 1</h2>
+				<h2>Left-justified navbar</h2>
 				<p>A navbar with all elements on the left.</p>
-				<p>Use a single child under <code>div.navbar</code>.</p>
+				<p>Use a single child under <code>div.navbar left</code>.</p>
 
-				<div class="navbar">
+				<div class="navbar left">
 					<ul>
 						<li><h1 class="title">TITLE</h1></li>
 						<li><a href="#">Link 1</a></li>
@@ -253,7 +223,65 @@ href=&quot;#&quot;&gt;links&lt;/a&gt; to show off their styles in context.&lt;/p
 				<div>
 					<pre class="code-block">
 						<code>
-&lt;div class=&quot;navbar&quot;&gt;
+&lt;div class=&quot;navbar left&quot;&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;h1 class=&quot;title&quot;&gt;TITLE&lt;/h1&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 3&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 4&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;</code>
+					</pre>
+				</div>
+
+				<h2>Centered navbar</h2>
+				<p>A navbar with space around the elements</p>
+				<p>Use a single child under <code>div.navbar around</code>.</p>
+
+				<div class="navbar around">
+					<ul>
+						<li><h1 class="title">TITLE</h1></li>
+						<li><a href="#">Link 1</a></li>
+						<li><a href="#">Link 2</a></li>
+						<li><a href="#">Link 3</a></li>
+						<li><a href="#">Link 4</a></li>
+					</ul>
+				</div>
+
+				<div>
+					<pre class="code-block">
+						<code>
+&lt;div class=&quot;navbar around&quot;&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;h1 class=&quot;title&quot;&gt;TITLE&lt;/h1&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 3&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 4&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;</code>
+					</pre>
+				</div>
+
+				<h2>Right-justified navbar</h2>
+				<p>A navbar with all elements on the left.</p>
+				<p>Use a single child under <code>div.navbar right</code>.</p>
+
+				<div class="navbar right">
+					<ul>
+						<li><h1 class="title">TITLE</h1></li>
+						<li><a href="#">Link 1</a></li>
+						<li><a href="#">Link 2</a></li>
+						<li><a href="#">Link 3</a></li>
+						<li><a href="#">Link 4</a></li>
+					</ul>
+				</div>
+
+				<div>
+					<pre class="code-block">
+						<code>
+&lt;div class=&quot;navbar right&quot;&gt;
 	&lt;ul&gt;
 		&lt;li&gt;&lt;h1 class=&quot;title&quot;&gt;TITLE&lt;/h1&gt;&lt;/li&gt;
 		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 1&lt;/a&gt;&lt;/li&gt;

@@ -35,6 +35,7 @@
 body {
   font-family: Oxygen, Roboto, system-ui, -apple-system, BlinkMacSystemFont;
   background-color: var(--color-background);
+  color: var(--color-light);
   padding: 1em;
 }
 
@@ -83,6 +84,7 @@ button {
   margin: 0.5em;
   min-width: 5em;
   min-height: 2em;
+
 }
 
 /* destructive button */
@@ -127,12 +129,41 @@ button.success:active {
   color: var(--color-lightest);
 }
 
+/* link styles */
+
+a {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* navbar styles */
+
 .navbar {
   display: flex;
   flex-direction: row;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
   border-bottom: 3px solid black;
-  /* padding: 0em; */
+}
+
+.around {
   justify-content: space-around;
+}
+
+.between {
+  justify-content: space-between;
+}
+
+.left {
+  justify-content: flex-start;
+}
+
+.right {
+  justify-content: flex-end;
 }
 
 .navbar > ul {
@@ -217,6 +248,7 @@ pre {
   border: 3px solid black;
   font-family: monospace;
   background-color: var(--color-md-light);
+  color: black;
 }
 
 code {
@@ -233,6 +265,7 @@ form {
   padding: 1em;
   margin: auto;
   background-color: var(--color-foreground);
+  color: var(--color-dark);
   display: flex;
   flex-direction: column;
   width: 50%;
