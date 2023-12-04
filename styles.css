@@ -139,10 +139,14 @@ button.success:active {
 a {
   text-decoration: none;
   color: var(--color-primary);
+  text-decoration: underline;
+  transition: all 0.5s ease;
 }
 
 a:hover {
-  text-decoration: underline;
+  color: var(--color-light);
+  text-decoration: wavy underline orange;
+  cursor: pointer;
 }
 
 /* navbar styles */
@@ -195,7 +199,7 @@ a:hover {
 .navbar > ul > li > a {
   position: relative;
   text-decoration: none;
-  color: var(--color-dark);
+  color: var(--color-light);
 }
 
 /* replace this with a svg steam animation that doesn't suck */
@@ -223,24 +227,23 @@ a:hover {
   width: 50px;
   background-image: url("/steam.gif");
   background-size: cover;
-  /* opacity: 0.5; */
 }
 
 @keyframes steam {
   0% {
-    opacity: 0.4;
+    opacity: 0.2;
   }
-  50% {
+  20% {
     opacity: 1;
-    top: -1.75em;
   }
   100% {
-    opacity: 0.4;
+    opacity: 0.2;
+    top: -2.5em;
   }
 }
 
 .navbar > ul > li > a:hover::before {
-  animation: steam 3s ease-in-out infinite;
+  animation: steam 2.5s linear infinite;
 }
 
 pre {
@@ -281,12 +284,86 @@ label {
   flex-direction: column;
 }
 
+.switch-box, .control-checkbox {
+  margin: 0.5em 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 form > label > span {
   margin: 0.5em 0;
 }
 
 form > label > textarea {
   min-height: 5em;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-light);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--color-info);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: var(--color-background);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--color-light);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.switch-label {
+  margin-right: 1em;
 }
 
 /* colour grid styles */
