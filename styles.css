@@ -39,6 +39,11 @@ body {
   padding: 1em;
 }
 
+section {
+  padding-bottom: 1em;
+  border-bottom: 3px solid black;
+}
+
 p {
   font-size: var(--base-font-size);
 }
@@ -147,7 +152,7 @@ a:hover {
   flex-direction: row;
   margin-bottom: 1em;
   padding-bottom: 0.5em;
-  border-bottom: 3px solid black;
+  /* border-bottom: 3px solid black; */
 }
 
 .around {
@@ -193,10 +198,9 @@ a:hover {
   color: var(--color-dark);
 }
 
-
 /* replace this with a svg steam animation that doesn't suck */
 
-/* .navbar > ul > li > a::before {
+.navbar > ul > li > a::before {
   content: "";
   position: absolute;
   display: inline-block;
@@ -213,30 +217,31 @@ a:hover {
   content: "";
   position: absolute;
   display: inline-block;
-  top: -1.25em;
-  left: 0;
-  height: 20px;
-  width: 100%;
-  transform: background-image url("/steam1.png");
+  top: -2em;
+  left: calc(50% - 25px);
+  height: 50px;
+  width: 50px;
+  background-image: url("/steam.gif");
   background-size: cover;
-  opacity: 0.5;
+  /* opacity: 0.5; */
 }
 
 @keyframes steam {
   0% {
-    background-image: url("/steam1.png");
+    opacity: 0.4;
   }
   50% {
-    background-image: url("/steam2.png");
+    opacity: 1;
+    top: -1.75em;
   }
   100% {
-    background-image: url("/steam3.png");
+    opacity: 0.4;
   }
 }
 
 .navbar > ul > li > a:hover::before {
-  animation: steam 1s ease-in-out infinite;
-} */
+  animation: steam 3s ease-in-out infinite;
+}
 
 pre {
   width: 90%;
